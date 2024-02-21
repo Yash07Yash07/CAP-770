@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int find(string st[], string ele , int i, int n) {
+    if(i>=n) {
+        return 0;
+    }
+    
+    string str = st[i];
+    if(str == ele) {
+        return 1;
+    } else {
+        return find(st,ele,i+1,n);
+        
+    }
+    
+    
+}
+int main()
+{
+    int n; 
+    cout <<"enter the size of string : ";
+    cin>>n;
+    string arr[n];
+    for(int i=0; i<n; i++) 
+    {
+        cin>>arr[i];
+    }
+    int i=0;
+    string str;
+    cout<<"enter the element to search: ";
+    cin>>str;
+    
+    int result = find(arr,str,i,n);
+    if(result) {
+        cout <<"element Present";
+    } else {
+        cout <<"Not element Present";
+    }
+
+    return 0;
+}
